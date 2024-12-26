@@ -50,3 +50,24 @@ i {
     display: none;
   }
 }
+@media (min-width: 350px) and (max-width:767px) {
+  h4{
+    margin: 25px 0 0 0;
+  }
+  li,
+a,
+.contact-ph,
+.contact-email,
+.contact-linkedin,
+.about-portfolio,
+.about-todo,
+.about-signup-login,
+.social-twitter,
+.social-instagram,
+.social-facebook,
+.teck-html,
+.tech-ts-js,
+.tech-angular,
+.code-github {
+  font-size: 14px;}
+}

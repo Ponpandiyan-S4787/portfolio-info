@@ -12,3 +12,8 @@ span{
 .container{
     margin: 140px 0 0 0;
 }
+@media (min-width: 350px) and (max-width: 767px) {
+    .container{
+        margin: 10px 0 0 0;
+    }
+}
