@@ -1,0 +1,38 @@
+<div class="container mt-4">
+  <div class="card">
+    <div class="email-section">
+      <section >
+        <span class="section"
+          ><i
+            class="bi bi-envelope-check"
+            style="color: #e51937; font-size: 35px"
+          ></i>
+          <h5>Email</h5></span
+        >
+        <ul>
+          <li>The email field must be filled out. It cannot be left blank.</li>
+          <li>
+            The email must match the standard email format (e.g., user{{
+              at
+            }}example.com).
+          </li>
+          <li>
+            This can be validated using a regular expression (regex) that checks
+            for the presence of "{{ at }}" and a domain suffix.
+          </li>
+          <li>
+            If the form is part of a registration or account creation process,
+            the email must be unique. The system should check the database to
+            ensure that the entered email isn't already associated with an
+            existing account.
+          </li>
+          <li>
+            Some forms may require a specific domain (e.g., for organizational
+            purposes), and the system might check if the domain is valid (e.g.,
+            only allowing company emails like user{{ at }}company.com).
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</div>

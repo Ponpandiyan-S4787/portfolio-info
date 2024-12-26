@@ -1,0 +1,90 @@
+@if (usersInfo) {
+<div class="user-details">
+  <section>
+    <header>
+      <h5>Logged User Informations</h5>
+    </header>
+  </section>
+  <article>
+    <div class="logged-firstname">
+      <div class="firstname left">
+        <span
+          ><i class="bi bi-person-check"></i> {{ usersInfo.firstName }}</span
+        >
+      </div>
+      <div class="verified right">
+        <span>{{ isVerified }}<i class="bi bi-patch-check"></i></span>
+      </div>
+    </div>
+    <!-- <div class="logged-lastname">
+      <div class="lastname left">
+        {{ usersInfo.lastName }}
+      </div>
+      <div class="verified right">
+        <span>{{ isVerified }}<i class="bi bi-patch-check"></i></span>
+      </div>
+    </div> -->
+    <div class="logged-email">
+      <div class="email left">
+        <span
+          ><i class="bi bi-envelope-arrow-down"></i> {{ usersInfo.email }}</span
+        >
+      </div>
+      <div class="verified right">
+        <span>{{ isVerified }}<i class="bi bi-patch-check"></i></span>
+      </div>
+    </div>
+    <!-- <div class="logged-gender">
+      <div class="gender left">
+        <span
+          ><i class="bi bi-arrow-counterclockwise"></i>
+          {{ usersInfo.genter }}</span
+        >
+      </div>
+      <div class="verified right">
+        <span>{{ isVerified }}<i class="bi bi-patch-check"></i></span>
+      </div>
+    </div> -->
+    <div class="logged-dob">
+      <div class="DOB left">
+        <span><i class="bi bi-cake2"></i>{{ usersInfo.dob }}</span>
+      </div>
+      <div class="verified right">
+        <span>{{ isVerified }}<i class="bi bi-patch-check"></i></span>
+      </div>
+    </div>
+    <div class="logged-address">
+      <div class="address left">
+        <span><i class="bi bi-house-door"></i>{{ usersInfo.address }}</span>
+      </div>
+      <div class="verified right">
+        <span>{{ isVerified }}<i class="bi bi-patch-check"></i></span>
+      </div>
+    </div>
+    <div class="logged-city">
+      <div class="city left">
+        <span><i class="bi bi-buildings"></i>{{ usersInfo.city }}</span>
+      </div>
+      <div class="verified right">
+        <span>{{ isVerified }}<i class="bi bi-patch-check"></i></span>
+      </div>
+    </div>
+    <div class="logged-state">
+      <div class="state left">
+        <span><i class="bi bi-buildings-fill"></i> {{ usersInfo.state }}</span>
+      </div>
+      <div class="verified right">
+        <span>{{ isVerified }}<i class="bi bi-patch-check"></i></span>
+      </div>
+    </div>
+    <div class="logged-postalcode">
+      <div class="postalcode left">
+        <span><i class="bi bi-123"></i> {{ usersInfo.postalCode }}</span>
+      </div>
+      <div class="verified right">
+        <span>{{ isVerified }}<i class="bi bi-patch-check"></i></span>
+      </div>
+    </div>
+  </article>
+</div>
+}

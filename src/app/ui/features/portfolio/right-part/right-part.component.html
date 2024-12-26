@@ -1,0 +1,18 @@
+<div class="card">
+  @if(selectedRoutePath==="basic_Info" ){
+  <app-basic-info></app-basic-info>
+  } @else if(selectedRoutePath==="tec_Tool"){
+  <app-tech-tools></app-tech-tools>
+  } @else if(selectedRoutePath==="wrk_Exp"){
+  <app-work-exp></app-work-exp>
+  } @else if(selectedRoutePath==="proj_Details"){
+  <app-proj-details></app-proj-details>
+  } @else if(selectedRoutePath==="edu_Info"){
+  <app-education></app-education>
+  } @else if(selectedRoutePath==="obj_Details"){
+    <app-objective></app-objective>
+  }
+  @else if(selectedRoutePath==="own_Proj_Details"){
+    <app-own-proj></app-own-proj>
+  }
+</div>

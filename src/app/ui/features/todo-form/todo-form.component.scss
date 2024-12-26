@@ -1,0 +1,18 @@
+.buttons{
+    display: flex;
+    gap: 20px;
+}
+.card{
+    padding: 10px;
+    box-shadow: 5px -10px 8px #141459;
+}
+// .container-fluid{
+    // display: flex;
+    // margin: 20px 0 0 0 ;
+// }
+@media (min-width:1024px) {
+    .container-fluid{
+        display: flex;
+        margin: 20px 0 0 0 ;
+    }
+}

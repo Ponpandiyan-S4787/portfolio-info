@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <header class="header mt-4">
+    <h2 class="d-flex" style="justify-content: center;">Todo description</h2>
+  </header>
+
+  <div class="container">
+    <section class="body-section">
+      <span class="body-description">{{ bodyContent.description }}</span>
+    </section>
+    <section class="body-section mt-4">
+      @for (item of bodyContent.headings; track $index) {
+
+      <h3 class="body-section__heading">{{ item.id }}.{{ item.heading }}</h3>
+
+      <span class="body-section__description ">{{ item.description }}</span>
+      @for (subContent of item.subHeader; track $index) {
+      <div class="sub-section">
+        <h5 class="body-section__subtitle">
+          {{ subContent.title }}
+        </h5>
+
+        <span class="body-section__subtitle__desc">
+          <ul>
+            <li>{{ subContent.description }}</li>
+          </ul></span
+        >
+      </div>
+      } }
+    </section>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+.exp-section,
+.email-section,
+.ph-section,
+.linkedin-section {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 5px;
+}
+span {
+  font-size: 20px;
+}
+h2 ,h1{
+    color: #e51937;
+  }
+  .content-section {
+    display: flex;
+    justify-content: center;
+    margin: 10% 0 0 0;
+  }

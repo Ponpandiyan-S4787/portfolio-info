@@ -1,0 +1,31 @@
+<!-- <div class="shared-component__input mb-3" >
+    <div class="shared-component__input__label">
+        <div class="label">{{label}} : </div>
+    </div>
+
+    <div class="shared-component__input__box ">
+        <input type="{{type}}" placeholder="{{placeholder}}" (input)="onInput($event)" [(ngModel)]="inputValue"
+            (blur)="onTouch()">
+    </div>
+</div> -->
+
+<!-- bootstrap - input box -->
+
+<div class="input-group mb-3 shared-component__input">
+  <span class="input-group-text" id="basic-addon1">{{ label }}</span>
+  <input
+    type="{{ type }}"
+    class="form-control {{isValid ==='valid'?'is-valid': isValid ==='inValid'? 'is-invalid':''}}"
+    placeholder="{{ placeholder }}"
+    aria-label="Username"
+    aria-describedby="basic-addon1"
+    [disabled]="isDisabled"
+    (input)="onInput($event)"
+    [(ngModel)]="inputValue"
+    (blur)="onTouch()"
+    (keydown)="onKeyDown(inputValue)"
+  />
+  <!-- <div class="valid-feedback">
+    Looks good!
+  </div> -->
+</div>

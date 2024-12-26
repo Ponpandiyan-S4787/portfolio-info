@@ -1,0 +1,84 @@
+@if(content){
+<div class="table-responsive container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email Id</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(todo of content; track $index){
+      <tr>
+        <td>{{ $index + 1 }}</td>
+        <td>{{ todo.fname }}</td>
+        <td>{{ todo.lname }}</td>
+        <td>{{ todo.email }}</td>
+
+        <td>
+          <app-shared-button
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            [buttonType]="'button'"
+            [buttonColor]="'btn-primary'"
+            [buttonName]="'Edit'"
+            [iconName]="'bi-pencil'"
+            (buttonEmit)="
+              onEditEmit(
+                $index + 1,
+                todo.fname,
+                todo.lname,
+                todo.email,
+                todo.password
+              )
+            "
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            [styles]="{
+              width: '100px',
+              height: '',
+              color: '',
+              backgroundColor: '#141459',
+              borderRadius: '',
+              border: '',
+              margin: '',
+              padding: ''
+            }"
+          ></app-shared-button>
+        </td>
+        <td>
+          <app-shared-button
+            [buttonType]="'button'"
+            [buttonColor]="''"
+            [buttonName]="'Delete'"
+            [iconName]="'bi-trash'"
+            (buttonEmit)="onDeleteEmit($index)"
+            [styles]="{
+              width: '100px',
+              height: '',
+              color: '#e51937',
+              backgroundColor: '',
+              borderRadius: '5px',
+              border: ' 1px solid #e51937',
+              margin: '',
+              padding: ''
+            }"
+          ></app-shared-button>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
+
+}
+
+<div class="pages-component__todo__edit__modal">
+  <app-todo-edit-modal
+    [todoEditedDatas]="todoEditedDatas"
+  ></app-todo-edit-modal>
+</div>

@@ -1,0 +1,124 @@
+<div class="container-fluid">
+  <div class="col-lg-12">
+    <div class="container">
+      @if (isShowLoginForm) {
+      <form action="" [formGroup]="loginForm">
+        <header class="header mb-2 mt-3">
+          <h3 style="color: #141459">Login Form</h3>
+        </header>
+        <section class="form-section">
+          <div class="first-name">
+            <app-shared-input
+              [label]="'First Name'"
+              [type]="'text'"
+              [placeholder]="'first name'"
+              formControlName="loginFname"
+              (charEmitValue)="onEmitFname($event)"
+              [isValid]="isFnameValid"
+            ></app-shared-input>
+            @if(loginForm.controls.loginFname.invalid &&
+            (loginForm.controls.loginFname.touched||
+            loginForm.controls.loginFname.dirty)){
+            <small class="text-danger">Enter a valid first name.</small>
+
+            }
+          </div>
+          <div class="last-name">
+            <app-shared-input
+              [label]="'Last Name'"
+              [type]="'text'"
+              [placeholder]="'Last name'"
+              formControlName="loginLname"
+              (charEmitValue)="onEmitLname($event)"
+              [isValid]="isLnameValid"
+            ></app-shared-input>
+            @if (loginForm.controls.loginLname.invalid
+            &&(loginForm.controls.loginLname.touched ||
+            loginForm.controls.loginLname.dirty)) {
+            <small class="text-danger">Enter a valid last name.</small>
+            }
+          </div>
+          <div class="email">
+            <app-shared-input
+              [label]="'Email'"
+              [type]="'email'"
+              [placeholder]="'Email'"
+              formControlName="loginEmail"
+              (inputEmitValue)="onEmitEmail($event)"
+              [isValid]="isEmailValid"
+            ></app-shared-input>
+            @if (loginForm.controls.loginEmail.invalid
+            &&(loginForm.controls.loginEmail.touched ||
+            loginForm.controls.loginEmail.dirty)) {
+            <small class="text-danger">Enter a valid Email.</small>
+            }
+          </div>
+          <div class="password">
+            <app-shared-input
+              [label]="'Password'"
+              [type]="'password'"
+              [placeholder]="'Password'"
+              formControlName="loginPassword"
+              (charEmitValue)="onEmitPassword($event)"
+              [isValid]="isPasswordValid"
+            ></app-shared-input>
+            @if (loginForm.controls.loginPassword.invalid
+            &&(loginForm.controls.loginPassword.touched ||
+            loginForm.controls.loginPassword.dirty)) {
+            <small class="text-danger">Enter a valid password.</small>
+            }
+          </div>
+        </section>
+        <section>
+          <div class="buttons">
+            <app-shared-button
+              [buttonType]="'button'"
+              [buttonColor]="'btn-success'"
+              [buttonName]="'Login'"
+              [isDisabled]="isDisabled"
+              (buttonEmit)="onLoginBtn()"
+              [iconName]="'bi-check-circle'"
+              [styles]="{
+                width: '100px',
+                height: '',
+                color: '',
+                backgroundColor: '#141459',
+                borderRadius: '',
+                border: '',
+                margin: '',
+                padding: ''
+              }"
+            ></app-shared-button>
+            <app-shared-button
+              [buttonType]="'button'"
+              [buttonColor]="''"
+              [buttonName]="'Cancel'"
+              (buttonEmit)="onCancelBtn()"
+              [iconName]="'bi-x-circle'"
+              [styles]="{
+                width: '100px',
+                height: '',
+                color: '#e51937',
+                backgroundColor: '',
+                borderRadius: '5px',
+                border: ' 1px solid #e51937',
+                margin: '',
+                padding: ''
+              }"
+            ></app-shared-button>
+          </div>
+        </section>
+      </form>
+      <hr>
+      <div class="social-imgs__component">
+        <app-social-imgs></app-social-imgs>
+      </div>
+      }@else {
+      <app-login-success> </app-login-success>
+
+      } @if (usersInfo) {
+      <app-login-details [usersInfo]="usersInfo"></app-login-details>
+      }
+    </div>
+  </div>
+</div>

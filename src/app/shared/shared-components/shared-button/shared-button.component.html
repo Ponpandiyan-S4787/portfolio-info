@@ -1,0 +1,12 @@
+<!-- bootstarp- btn -->
+
+<div class="btn-group mb-3" role="group" aria-label="Basic example">
+  <button
+    type="{{ buttonType }}"
+    class="btn {{ buttonColor }}"
+    (click)="onBtnClicked()"
+    [ngStyle]="styles"
+  >
+  {{ buttonName }} <i class="bi {{iconName}}"></i> 
+  </button>
+</div>

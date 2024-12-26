@@ -1,0 +1,120 @@
+<div class="container-fluid">
+<div class="col-lg-4">
+  <app-todo-left></app-todo-left>
+</div>
+<div class="col-lg-4">
+  <div class="card mt-4" >
+    <div class="card-body">
+      <form action="" [formGroup]="todoForm">
+        <header>
+          <h3 class="d-flex mb-3 mt-3" style="justify-content: center">
+            Todo Form 
+          </h3>
+        </header>
+        <div class="first-name">
+          <app-shared-input
+            [label]="'First Name'"
+            [type]="'text'"
+            [placeholder]="'first name'"
+            (charEmitValue)="onEmitFname($event)"
+            [isValid]="isFnameValid"
+            formControlName="fname"
+          ></app-shared-input>
+          @if(todoForm.controls.fname.invalid &&
+          (todoForm.controls.fname.touched|| todoForm.controls.fname.dirty)){
+          <small class="text-danger">Enter a valid first name.</small>
+  
+          }
+        </div>
+        <div class="last-name">
+          <app-shared-input
+            [label]="'Last Name'"
+            [type]="'text'"
+            [placeholder]="'last name'"
+            (charEmitValue)="onEmitLname($event)"
+            [isValid]="isLnameValid"
+            formControlName="lname"
+          ></app-shared-input>
+          @if (todoForm.controls.lname.invalid &&(todoForm.controls.lname.touched
+          || todoForm.controls.lname.dirty)) {
+          <small class="text-danger">Enter a valid last name.</small>
+          }
+        </div>
+        <div class="email">
+          <app-shared-input
+            [label]="'Email'"
+            [type]="'email'"
+            [placeholder]="'email'"
+            (inputEmitValue)="onEmitEmail($event)"
+            [isValid]="isEmailValid"
+            formControlName="email"
+          ></app-shared-input>
+          @if (todoForm.controls.email.invalid &&(todoForm.controls.email.touched
+          || todoForm.controls.email.dirty)) {
+          <small class="text-danger">Enter a valid email.</small>
+          }
+        </div>
+        <div class="password">
+          <app-shared-input
+            [label]="'Password'"
+            [type]="'password'"
+            [placeholder]="'password'"
+            (charEmitValue)="onEmitPassword($event)"
+            [isValid]="isPasswordValid"
+            formControlName="password"
+          ></app-shared-input>
+          @if (todoForm.controls.password.invalid
+          &&(todoForm.controls.password.touched ||
+          todoForm.controls.password.dirty)) {
+          <small class="text-danger">Enter a valid password.</small>
+          }
+        </div>
+        <div class="buttons">
+          <div class="submit-btn">
+            <app-shared-button
+              [buttonType]="'button'"
+              [buttonColor]="'btn-success'"
+              [buttonName]="'Submit'"
+              [isDisabled]="isDisabled"
+              [iconName]="'bi-check-circle'"
+              (buttonEmit)="submitEmitted()"
+              [styles]="{
+                width: '100px',
+                height: '',
+                color: '',
+                backgroundColor: '#141459',
+                borderRadius: '',
+                border: '',
+                margin: '',
+                padding: ''
+              }"
+            ></app-shared-button>
+          </div>
+          <div class="cancel-btn">
+            <app-shared-button
+              [buttonType]="'button'"
+              [buttonColor]="''"
+              [buttonName]="'Cancel'"
+              [iconName]="'bi-x-circle'"
+              (buttonEmit)="cancelEmitted()"
+              [styles]="{
+                width: '100px',
+                height: '',
+                color: '#e51937',
+                backgroundColor: '',
+                borderRadius: '5px',
+                border: ' 1px solid #e51937',
+                margin: '',
+                padding: ''
+              }"
+            ></app-shared-button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="col-lg-4">
+  <app-todo-right></app-todo-right>
+</div>
+</div>

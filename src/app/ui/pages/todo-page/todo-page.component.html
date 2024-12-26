@@ -1,0 +1,18 @@
+<div class="pages-component__todoForm">
+  <app-todo-form
+    (submitEvent)="onSubmitted($event)"
+    (cancelEvent)="onCancelled()"
+  ></app-todo-form>
+</div>
+
+@if(todoData$ ){
+<div class="pages-component__todoList">
+  <app-todo-list
+    [content]="todoData$"
+    [todoEditedDatas]="todoEditedDatas"
+    (deleteBtnEmit)="deleteEmitted($event)"
+    (editBtnEvent)="editEventEmitted($event)"
+  ></app-todo-list>
+</div>
+} 
+

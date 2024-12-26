@@ -1,0 +1,52 @@
+section,
+a,
+li {
+  color: white;
+}
+li,
+a,
+.contact-ph,
+.contact-email,
+.contact-linkedin,
+.about-portfolio,
+.about-todo,
+.about-signup-login,
+.social-twitter,
+.social-instagram,
+.social-facebook,
+.teck-html,
+.tech-ts-js,
+.tech-angular,
+.code-github {
+  font-size: 18px;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+i {
+  padding: 20px;
+  color: white;
+}
+.available,
+.tech,
+.social,
+.contact {
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: #e51937;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    display: flex;
+  }
+}
+@media (max-width: 767) {
+  .container {
+    display: none;
+  }
+}

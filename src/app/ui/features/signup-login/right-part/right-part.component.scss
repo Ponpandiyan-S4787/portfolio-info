@@ -1,0 +1,26 @@
+.card{
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+.bi{
+    font-size: 50px;
+  color: #e51937
+}
+a{
+   color: #141459; 
+}
+h4{
+    padding: 20px;
+}
+@media (max-width: 1023px) {
+   .container{
+    padding: 0px;
+    margin: 0px;
+   }
+}
+@media (min-width:769px) and (max-width:820px) {
+    .card{
+        width: 740px;
+       }
+}

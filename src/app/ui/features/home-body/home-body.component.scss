@@ -1,0 +1,23 @@
+.body {
+  &-section {
+    margin-top: 50px;
+    &__heading {
+      margin-top: 50px;
+      margin-bottom: 20px;
+    }&__description {
+        margin-top: 25px;
+        line-height: 30px;
+    }
+    &__subtitle {
+        padding: 10px;
+        margin: 10px;
+    }
+  }
+  &-description {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+}
+.sub-section{
+    margin-left: 30px;
+}

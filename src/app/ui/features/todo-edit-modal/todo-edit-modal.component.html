@@ -1,0 +1,90 @@
+
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      @if(todoEditedDatas){
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          Please update your details
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <div class="modal-body">
+        <app-shared-input
+          [label]="'First Name'"
+          [type]="'text'"
+          (inputEmitValue)="edittedFname($event)"
+          [inputValue]="todoEditedDatas.fname"
+        ></app-shared-input>
+        <app-shared-input
+          [label]="'Last Name'"
+          [type]="'text'"
+          (inputEmitValue)="edittedLname($event)"
+          [inputValue]="todoEditedDatas.lname"
+        ></app-shared-input>
+        <app-shared-input
+          [label]="'Email'"
+          [type]="'email'"
+          (inputEmitValue)="edittedEmail($event)"
+          [inputValue]="todoEditedDatas.email"
+        ></app-shared-input>
+        <app-shared-input
+          [label]="'Password'"
+          [type]="'password'"
+          (inputEmitValue)="edittedPassword($event)"
+          [inputValue]="todoEditedDatas.password"
+        ></app-shared-input>
+        <small class="text-danger"> Please remove and enter the same password </small>
+      </div>
+      <div class="modal-footer">
+        <app-shared-button
+          [buttonColor]="''"
+          [buttonName]="'Close'"
+          [iconName]="'bi-x-circle'"
+          data-bs-dismiss="modal"
+          [styles]="{
+            width: '100px',
+            height: '',
+            color: '#e51937',
+            backgroundColor: '',
+            borderRadius: '5px',
+            border: ' 1px solid #e51937',
+            margin: '',
+            padding: ''
+          }"
+        ></app-shared-button>
+        <app-shared-button
+          [buttonType]="'Submit'"
+          [buttonColor]="'btn-success'"
+          [buttonName]="'Save'"
+          data-bs-dismiss="modal"
+          [iconName]="'bi-check-circle'"
+          (buttonEmit)="onEmitSaveBtn(todoEditedDatas.idx)"
+          [styles]="{
+            width: '100px',
+            height: '',
+            color: '',
+            backgroundColor: '#141459',
+            borderRadius: '',
+            border: '',
+            margin: '',
+            padding: ''
+          }"
+        ></app-shared-button>
+      </div>
+      }
+    </div>
+  </div>
+</div>

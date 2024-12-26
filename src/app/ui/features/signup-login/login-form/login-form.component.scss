@@ -1,0 +1,18 @@
+
+.social-imgs__component{
+  padding: 6px;
+}
+.header{
+  display: flex;
+  justify-content: center;
+}
+.buttons{
+    display: flex;
+    margin-bottom: 20px;
+    gap: 50px;
+}
+@media (min-width: 376px) {
+    .container-fluid {
+      display: flex;
+    }
+  }
