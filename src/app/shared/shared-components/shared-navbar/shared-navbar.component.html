@@ -1,9 +1,14 @@
-<nav class="navbar navbar-expand-lg navbar-light ">
+<nav class="navbar navbar-expand-lg navbar-light">
   <div class="container-fluid gap-4">
-    <a class="navbar-brand" href="#" style="color: #e51937; font-size: 30px;" [routerLink]="'/home'"
+    <a
+      class="navbar-brand"
+      href="#"
+      style="color: white; font-size: 30px"
+      [routerLink]="'/home'"
       >Ponpandiyan Subramaniyan</a
     >
     <button
+      style="color: white"
       class="navbar-toggler"
       type="button"
       data-bs-toggle="collapse"
@@ -12,7 +17,17 @@
       aria-expanded="false"
       aria-label="Toggle navigation"
     >
-      <span class="navbar-toggler-icon"></span>
+      @if(isOpen){
+
+      <span class="" style="color: white" (click)="isOpenClicked()"
+        ><i class="bi bi-border-width"></i
+      ></span>
+      } @if(isClose){
+      <span class="" style="color: white" (click)="isCloseClicked()"
+        ><i class="bi bi-x"></i
+      ></span>
+
+      }
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-4">
@@ -39,10 +54,10 @@
             aria-disabled="true"
             style="color: white"
             [routerLink]="'/sign-up/log-in'"
-            >Login </a
-          >
+            >Login
+          </a>
           }@else {
-            <a
+          <a
             class="nav-link"
             href="#"
             tabindex="-1"
@@ -50,10 +65,10 @@
             style="color: #e51937"
             routerLink="'/home'"
             (click)="onUserLoggout()"
-            ><i class="bi bi-person-circle" style="margin: 5px;"></i>{{loggedUserName}}</a
+            ><i class="bi bi-person-circle" style="margin: 5px"></i
+            >{{ loggedUserName }}</a
           >
           }
-          
         </li>
       </ul>
       <form class="d-flex">

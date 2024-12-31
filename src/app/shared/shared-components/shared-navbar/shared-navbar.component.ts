@@ -11,7 +11,8 @@ import { AuthService } from '../../shared-data-access/services/auth.service';
 })
 export class SharedNavbarComponent implements DoCheck {
   loggedUserName!: null | string;
-
+  isOpen:boolean=true
+  isClose:boolean=false
   constructor(private router: Router, private authService:AuthService) {}
 
   ngDoCheck(): void {
@@ -30,5 +31,13 @@ export class SharedNavbarComponent implements DoCheck {
     this.authService.logoutMethod()
     localStorage.clear();
     this.router.navigate(['/home']);
+  }
+  isOpenClicked(){
+    this.isOpen=false
+    this.isClose=true
+  }
+  isCloseClicked(){
+    this.isOpen=true
+    this.isClose=false
   }
 }
